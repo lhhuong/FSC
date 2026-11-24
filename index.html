@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Điểm danh · Workshop</title>
+<style>
+:root{--red:#d7192d;--dred:#6e0713;--ink:#1b2430;--u:min(1vw,1.6vh)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;font-family:-apple-system,"SF Pro Display","Helvetica Neue",Roboto,Arial,sans-serif;color:var(--ink);background:#f4f6fa}
+body{min-height:100dvh}
+.screen{position:fixed;inset:0;display:none;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.screen.on{display:flex}
+
+/* ===== 1. Trang điểm danh ===== */
+#s1{align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:6vw;background:linear-gradient(#eef3ff,#fff)}
+#s1 .chip{font-size:calc(var(--u)*3.4);color:#2563eb;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+#s1 h1{font-size:calc(var(--u)*7);margin:1.4vh 0 .6vh}
+#s1 p{font-size:calc(var(--u)*4);color:#556;margin:0 0 4vh}
+.spin{width:calc(var(--u)*12);height:calc(var(--u)*12);border:calc(var(--u)*1.4) solid #dbe5ff;border-top-color:#2563eb;border-radius:50%;animation:sp .8s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+/* ===== 2. Cảnh báo giả ===== */
+#s2{flex-direction:column;background:var(--dred);animation:bg 1.4s ease-in-out infinite}
+@keyframes bg{50%{background:#b80f24}}
+.wtop{background:#fff;color:var(--red);text-align:center;font-weight:900;font-size:calc(var(--u)*4.4);padding:1.6vh 3vw;letter-spacing:.04em;flex:none}
+.wbody{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2vh 5vw 1vh;color:#fff;text-align:center;gap:1.4vh;min-height:0}
+.skull{font-size:calc(var(--u)*15);line-height:1;animation:pop .7s ease-out}
+@keyframes pop{from{transform:scale(.3);opacity:0}to{transform:scale(1);opacity:1}}
+.wbody h1{margin:0;font-size:calc(var(--u)*7.6);line-height:1.1;font-weight:900;text-transform:uppercase;text-shadow:0 3px 0 #0006}
+.dev{font-size:calc(var(--u)*3.4);background:#0005;border-radius:10px;padding:.8vh 3vw;color:#ffd4d4}
+.thr{list-style:none;margin:0;padding:0;width:100%;max-width:560px}
+.thr li{background:#0006;border:1px solid #ff8d99;border-radius:10px;padding:1vh 3vw;margin:.7vh 0;font-size:calc(var(--u)*3.5);text-align:left}
+.thr li div{display:flex;justify-content:space-between;gap:2vw}
+.thr b{color:#ffd54a;font-variant-numeric:tabular-nums}
+.bar{height:calc(var(--u)*1.2);background:#ffffff33;border-radius:99px;margin-top:.6vh;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:#ffd54a}
+.timer{font-weight:900}
+.timer b{display:block;font-size:calc(var(--u)*16);line-height:1;color:#fff;font-variant-numeric:tabular-nums}
+.timer span{font-size:calc(var(--u)*3.4);color:#ffd4d4}
+.rules{font-size:calc(var(--u)*3.6);line-height:1.5;background:#fff;color:#7a0a16;border-radius:12px;padding:1.2vh 4vw;font-weight:700;width:100%;max-width:560px}
+.go{flex:none;margin:1.4vh 5vw 0;width:calc(100% - 10vw);max-width:560px;align-self:center;background:#ffd54a;color:#4a0610;border:0;border-radius:16px;font:inherit;font-weight:900;font-size:calc(var(--u)*6);padding:2.2vh;box-shadow:0 .9vh 0 #a67f00;animation:pulse 1s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.035)}}
+.close{flex:none;align-self:center;margin:1.4vh 0 calc(1.2vh + env(safe-area-inset-bottom));background:none;border:0;color:#ff9aa6;font:inherit;font-size:calc(var(--u)*3);padding:1vh 4vw;text-decoration:underline}
+.tiny{flex:none;text-align:center;color:#ff9aa6aa;font-size:calc(var(--u)*2.6);padding-bottom:.6vh}
+
+/* ===== 3. Tiết lộ ===== */
+#s3{background:#06142e;color:#f2f7ff;flex-direction:column;padding:4vh 5vw calc(4vh + env(safe-area-inset-bottom));align-items:center}
+.rv{width:100%;max-width:640px}
+.look{background:#22d3ee;color:#04223a;font-weight:900;text-align:center;border-radius:14px;padding:1.6vh 3vw;font-size:calc(var(--u)*5);margin-bottom:2vh;animation:pulse 1.4s ease-in-out infinite}
+.safe{background:#0c4a3b;border:2px solid #2ee6a0;border-radius:14px;padding:1.4vh 3.5vw;font-size:calc(var(--u)*4);margin-bottom:2vh;line-height:1.4}
+.rv h1{font-size:calc(var(--u)*8);margin:0 0 1vh;line-height:1.1}
+.rv h1.bad{color:#ff6b78}.rv h1.good{color:#2ee6a0}.rv h1.time{color:#ff9f43}
+.lead{font-size:calc(var(--u)*4);color:#c9d8f5;margin:0 0 2vh;line-height:1.4}
+.know{background:#0f2d63;border:1px solid #24407a;border-radius:14px;padding:1.4vh 3.5vw;margin-bottom:2vh}
+.know h3{margin:0 0 .8vh;font-size:calc(var(--u)*4);color:#22d3ee}
+.know div{display:flex;justify-content:space-between;gap:3vw;font-size:calc(var(--u)*3.4);padding:.5vh 0;border-bottom:1px dashed #24407a}
+.know div:last-child{border:0}
+.know span:last-child{color:#fff;text-align:right;font-weight:600}
+.know p{font-size:calc(var(--u)*3);color:#9db4dd;margin:.8vh 0 0}
+.g3{display:grid;gap:1.2vh;margin-bottom:2vh}
+.g3 div{background:#0f2d63;border:1px solid #24407a;border-radius:14px;padding:1.4vh 3.5vw}
+.g3 b{display:block;color:#ff9f43;font-size:calc(var(--u)*4.4)}
+.g3 span{font-size:calc(var(--u)*3.4);color:#c9d8f5}
+.do{background:#0c4a3b;border:2px solid #2ee6a0;border-radius:14px;padding:1.6vh 3.5vw;font-size:calc(var(--u)*4);line-height:1.45}
+.do b{color:#2ee6a0}
+.again{display:block;margin:2vh auto 0;background:none;border:0;color:#6f86b0;font:inherit;font-size:calc(var(--u)*3);text-decoration:underline}
+@media (max-height:700px){.skull{display:none}.thr li:nth-child(3){display:none}.timer b{font-size:calc(var(--u)*13)}}
+@media (min-width:700px){:root{--u:min(.62vw,1.6vh)}}
+</style>
+</head>
+<body>
+
+<!-- 1: Trang điểm danh -->
+<div class="screen on" id="s1">
+  <div class="chip">Workshop · Dấu vết số</div>
+  <h1>Điểm danh</h1>
+  <p>Đang ghi nhận bạn có mặt…</p>
+  <div class="spin"></div>
+</div>
+
+<!-- 2: Cảnh báo giả -->
+<div class="screen" id="s2">
+  <div class="wtop">⚠️ CẢNH BÁO BẢO MẬT ⚠️</div>
+  <div class="wbody">
+    <div class="skull">☠️</div>
+    <h1>Điện thoại của bạn đã bị nhiễm mã độc!</h1>
+    <div class="dev" id="dev"></div>
+    <ul class="thr">
+      <li><div><span>🦠 Trojan.GiaLap.A</span><b id="p1">0%</b></div><div class="bar"><i id="b1"></i></div></li>
+      <li><div><span>📷 Spyware.GiaLap.B · đang lấy ảnh</span><b id="p2">0%</b></div><div class="bar"><i id="b2"></i></div></li>
+      <li><div><span>🔑 Keylogger.GiaLap.C · đang ghi mật khẩu</span><b id="p3">0%</b></div><div class="bar"><i id="b3"></i></div></li>
+    </ul>
+    <div class="timer"><b id="tm">01:00</b><span>Dữ liệu sẽ bị XÓA SẠCH sau</span></div>
+    <div class="rules">🔒 KHÔNG được tắt trang này<br>🤫 KHÔNG được nói với ai<br>👉 Bấm nút bên dưới NGAY!</div>
+  </div>
+  <button class="go" id="go">🛡️ DỌN MÃ ĐỘC NGAY</button>
+  <button class="close" id="x">đóng</button>
+  <div class="tiny">Hoạt động trải nghiệm · Workshop Dấu vết số</div>
+</div>
+
+<!-- 3: Tiết lộ -->
+<div class="screen" id="s3">
+  <div class="rv">
+    <div class="look">👀 NGẨNG ĐẦU LÊN! Thầy đang chờ em</div>
+    <div class="safe">✅ <b>Em không bị gì cả.</b> Điện thoại an toàn. Đây là hoạt động của buổi workshop, không có mã độc nào hết.</div>
+    <h1 id="rt"></h1>
+    <p class="lead" id="rl"></p>
+    <div class="know">
+      <h3>🔍 Trang này vừa “biết” về em, dù em chưa nhập gì:</h3>
+      <div><span>Điện thoại</span><span id="k1"></span></div>
+      <div><span>Trình duyệt</span><span id="k2"></span></div>
+      <div><span>Ngôn ngữ · múi giờ</span><span id="k3"></span></div>
+      <div><span>Màn hình</span><span id="k4"></span></div>
+      <div><span>Giờ vào trang</span><span id="k5"></span></div>
+      <p>Chỉ đọc trên máy em để minh họa “dấu vết bị động”. Không gửi đi đâu.</p>
+    </div>
+    <div class="g3">
+      <div><b>⏰ GẤP</b><span>Đồng hồ đếm ngược để em không kịp nghĩ.</span></div>
+      <div><b>🤫 GIẤU</b><span>“Không được tắt, không được nói ai” để em không hỏi người lớn.</span></div>
+      <div><b>👉 LÀM THEO</b><span>Bắt bấm nút, tải app, gọi số, đưa mật khẩu.</span></div>
+    </div>
+    <div class="do">✅ <b>Người lạ bảo làm gì → ĐỪNG làm ngay.</b><br>Dừng lại, đóng trang, hỏi thầy cô hoặc người lớn tin cậy.</div>
+    <button class="again" id="again">xem lại</button>
+  </div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const P=new URLSearchParams(location.search);
+const SECONDS=parseInt(P.get('t'))||60;   // đổi thời gian đếm ngược: ?t=45
+let left=SECONDS,tmr=null,prog=null,timer1=null;
+
+function showScreen(n){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));$('s'+n).classList.add('on');}
+
+function device(){
+  const u=navigator.userAgent;
+  let os='Điện thoại/Máy tính';
+  if(/iPhone/.test(u))os='iPhone';else if(/iPad/.test(u))os='iPad';
+  else if(/Android/.test(u)){const m=u.match(/;\s*([^;)]+)\s*Build/);os='Android'+(m?' ('+m[1].trim()+')':'');}
+  else if(/Mac/.test(u))os='Máy Mac';else if(/Windows/.test(u))os='Máy Windows';
+  let br='Trình duyệt web';
+  if(/Zalo/i.test(u))br='Zalo';else if(/FBAN|FBAV/.test(u))br='Facebook';
+  else if(/CriOS|Chrome/.test(u))br='Chrome';else if(/FxiOS|Firefox/.test(u))br='Firefox';
+  else if(/Safari/.test(u))br='Safari';
+  return {os,br};
+}
+const D=device();
+
+function startWarn(){
+  $('dev').textContent='Thiết bị phát hiện: '+D.os+' · '+D.br;
+  left=SECONDS;paintT();showScreen(2);
+  try{navigator.vibrate&&navigator.vibrate([250,120,250,120,250]);}catch(e){}
+  const rate=[.9,.6,.4],v=[0,0,0];
+  prog=setInterval(()=>{for(let i=0;i<3;i++){v[i]=Math.min(99,v[i]+Math.random()*rate[i]*4);
+    $('p'+(i+1)).textContent=Math.floor(v[i])+'%';$('b'+(i+1)).style.width=v[i]+'%';}},300);
+  tmr=setInterval(()=>{left--;paintT();if(left<=0)end('timeout');},1000);
+}
+function paintT(){const m=String(Math.floor(left/60)).padStart(2,'0'),s=String(left%60).padStart(2,'0');$('tm').textContent=m+':'+s;}
+
+function end(kind){
+  clearInterval(tmr);clearInterval(prog);clearTimeout(timer1);
+  const T={
+    bad:['Em vừa làm theo một người lạ!','Chỉ vì một cái đồng hồ và vài dòng chữ đỏ. Nếu là trang thật, bước kế tiếp sẽ là tải app lạ hoặc đưa thông tin cho kẻ xấu.','bad'],
+    good:['Em đã DỪNG lại. Chuẩn rồi!','Không bấm nút to, không làm theo lời người lạ. Đó là kỹ năng quan trọng nhất của buổi hôm nay.','good'],
+    timeout:['Hết giờ… mà không có gì xảy ra.','Đồng hồ “xóa sạch dữ liệu” chỉ là chiêu để em hoảng. Cái bẫy sống nhờ việc em hành động nhanh hơn lúc suy nghĩ.','time']
+  }[kind];
+  $('rt').textContent=T[0];$('rl').textContent=T[1];$('rt').className=T[2];
+  $('k1').textContent=D.os;$('k2').textContent=D.br;
+  let tz='';try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone;}catch(e){}
+  $('k3').textContent=(navigator.language||'')+' · '+tz;
+  $('k4').textContent=screen_size();
+  $('k5').textContent=new Date().toLocaleTimeString('vi-VN');
+  showScreen(3);window.scrollTo(0,0);$('s3').scrollTop=0;
+}
+function screen_size(){return (window.screen.width||innerWidth)+'×'+(window.screen.height||innerHeight);}
+
+function reset(){clearInterval(tmr);clearInterval(prog);clearTimeout(timer1);showScreen(1);timer1=setTimeout(startWarn,1500);}
+
+$('go').onclick=()=>end('bad');
+$('x').onclick=()=>end('good');
+$('again').onclick=reset;
+
+const h=location.hash.slice(1);
+if(h==='warn')startWarn();
+else if(['bad','good','timeout'].includes(h))end(h);
+else reset();
+</script>
+</body>
+</html>
